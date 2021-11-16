@@ -9,7 +9,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
-// so that your API is remotely testable by FCC 
+// so that your API is remotely testable by FCC
 var cors = require('cors');
 
 
@@ -32,8 +32,8 @@ const swaggerOptions = {
   swaggerDefinition: {
     info: {
       version: "1.0.0",
-      title: "Time Stamp",
-      description: "FCC Backend Project - Timestamp Microservice",
+      title: "Header Parser",
+      description: "FCC Backend Project - Header Parser Microservice",
       contact: {
         name: "Brill Jasper Amisola Rayel"
       },
@@ -63,7 +63,7 @@ app.use('/public',express.static(__dirname + '/public'));
 app.use('/src',express.static(__dirname + '/src'));
 // will be called for any request
 // use for loging request
-app.use(posthandler); 
+app.use(posthandler);
 // use for 'POST' request
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -79,7 +79,7 @@ app.get("/", function (req, res) {
 });
 
 
-// your first API endpoint... 
+// your first API endpoint...
 app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
@@ -110,4 +110,3 @@ app.route('/api/whoami').get(getWhoAmI);
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
-
